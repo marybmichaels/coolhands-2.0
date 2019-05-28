@@ -1,0 +1,68 @@
+body {
+  margin-top: 0;
+  /* background-color: #e3eaf2; */
+}
+
+
+@media screen and (min-width: 480px) {
+  .main {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1100px;
+    padding: 0 10px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .signup {
+    border-left: 1px solid #9d9d99;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .signup {
+    border-top: 1px solid #9d9d99;
+    padding-top: 10px;
+  }
+
+  .login {
+    padding-bottom: 4px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modal-dialog {
+    width: 80%;
+    min-width: 310px;
+    margin: 30px auto;
+  }
+}
+
+.auth {
+  padding-top: 80px;
+  margin: auto;
+  width: 80%;
+  min-width: 320px;
+}
+
+.auth-text {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.navbar .container {
+  width: 100%;
+}
+
+.question {
+  font-size: 1.1em;
+}
+
+.answer .form-group label {
+  display: block;
+}
+
+.answer .form-group label:nth-child(1) {
+  margin-left: 10px;
+}
