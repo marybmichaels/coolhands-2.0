@@ -12,7 +12,7 @@ export default class Question extends Component {
 
     switch(question.type) {
       case 'radio':
-        QuestionComponent = RadioType;
+        QuestionComponent = FormGroup;
         break;
 
       case 'multi':

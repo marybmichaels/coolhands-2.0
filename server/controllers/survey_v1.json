@@ -12,8 +12,8 @@
     },
     {
       "number": 2,
-      "type": "multi",
-      "text": "hello",
+      "type": "radio",
+      "text": "email",
       "possible_answers": 
       [
         ""
@@ -22,34 +22,7 @@
     {
       "number": 3,
       "type": "radio",
-      "text": "How much do you usually spend on shopping per month?",
-      "possible_answers": 
-      [
-        ""
-      ]
-    },
-    {
-      "number": 4,
-      "type": "multi",
-      "text": "What shopping sites do you use?",
-      "possible_answers": 
-      [
-        ""
-      ]
-    },
-    {
-      "number": 5,
-      "type": "multi",
-      "text": "What interests you?",
-      "possible_answers": 
-      [
-        ""
-      ]
-    },
-    {
-      "number": 6,
-      "type": "radio",
-      "text": "What comprises your shopping list the most?",
+      "text": "order",
       "possible_answers": 
       [
         ""
