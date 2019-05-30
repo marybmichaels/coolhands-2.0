@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Radio, Checkbox, FormGroup, FormControl, Modal, Header, Footer, Title, Body, Button } from 'react-bootstrap';
 
-export default class RadioType extends Component {
+export default class Form extends Component {
   handleRadioAnswer = (question_id, answer_id) => {
     var picked_answers = this.props.picked_answers;
     picked_answers[question_id] = answer_id;
@@ -14,7 +14,7 @@ export default class RadioType extends Component {
     return(
       <FormGroup>
         {answers_value.map((ans, j) =>
-          <Radio  
+          <FormGroup  
             key={j} 
             value={answers_id[j]}
             name={"radioGroup "+_id}
@@ -23,7 +23,7 @@ export default class RadioType extends Component {
             inline
           >
             {ans}
-          </Radio>
+          </FormGroup>
         )}
       </FormGroup>
     );

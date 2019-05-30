@@ -1,7 +1,10 @@
+
 body {
   margin-top: 0;
-  /* background-color: #e3eaf2; */
+  background: url("/Images/download.jpg");
+  background-color: coral;
 }
+
 
 
 @media screen and (min-width: 480px) {
@@ -10,6 +13,7 @@ body {
     margin-right: auto;
     max-width: 1100px;
     padding: 0 10px;
+   
   }
 }
 
@@ -53,7 +57,10 @@ body {
 
 .navbar .container {
   width: 100%;
+  background-image: url("/Images/cityscape_refined.jpg");
+  background-color: blue;
 }
+
 
 .question {
   font-size: 1.1em;

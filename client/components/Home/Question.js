@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Radio, Checkbox, FormGroup, FormControl, Modal, Header, Footer, Title, Body, Button } from 'react-bootstrap';
-import RadioType from '../QuestionType/RadioType';
+import Form from '../QuestionType/RadioType';
 import CheckboxType from '../QuestionType/CheckboxType';
 
 export default class Question extends Component {
@@ -12,7 +12,7 @@ export default class Question extends Component {
 
     switch(question.type) {
       case 'radio':
-        QuestionComponent = FormGroup;
+        QuestionComponent = Form;
         break;
 
       case 'multi':
