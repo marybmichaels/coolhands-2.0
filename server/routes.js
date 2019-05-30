@@ -11,6 +11,8 @@ module.exports = function(app, passport) {
   app.get('/getUser', auth.getUser);
   app.get('/logout', auth.logout);
 
+  app.get('/login', surveys.getSurvey);
+
   //Survey
   app.get('/getSurvey', surveys.getSurvey);
 

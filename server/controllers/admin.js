@@ -61,5 +61,6 @@ module.exports.updateSurvey = function() {
   var name = 'z_fashion_v1';
   Survey.create({name: name, published: true}, function(err, survey) {
     if (!err) console.log("New survey is created: ", survey);
+    console.log(err);
   });
 }

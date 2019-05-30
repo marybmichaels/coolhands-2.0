@@ -22,8 +22,9 @@ module.exports.getSurvey = function(req, res) {
     });
   }
   if (user.survey_status === 'retired' || user.survey_status == 'complete') {
-    console.log('Skip survey')
-    res.send('skip');
+    promptSurvey(user._id, function(surveyArray) {
+      res.send(surveyArray);
+    });
   }
 }
 
