@@ -12,7 +12,7 @@
     },
     {
       "number": 2,
-      "type": "multi",
+      "type": "radio",
       "text": "email",
       "possible_answers": 
       [
