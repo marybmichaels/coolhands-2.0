@@ -1,51 +1,58 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, FormControl, Col, ControlLabel, Checkbox, Button, Badge} from 'react-bootstrap';
+import { Link } from 'react-router';
+import { render } from 'react-dom';
+import { Alert, Form, FormGroup, FormControl, Col, ControlLabel, Checkbox, Button, HelpBlock} from 'react-bootstrap';
 
-export default class Question extends Component{
-	constructor() {
-		super();
-		this.state = {
-			blank: '',
-			error: false,
-		}
-	}
+export default class Question extends Component {
+	state = {
+		blank: ''
+	};
 
-	
+  getValidationStateName() {
+    if (/^[a-zA-Z,.'-]+$/.test(this.state.blank)) return 'success';
+    else if (this.state.blank.length) return 'error';
+  }
 
-	
-
-  handleSubmit = (e) => {
-    e.preventDefault()
-    const blank = this.state.blank;
-    
+  handleChange = (e) => {
+      this.setState({ [e.target.blank] : e.target.value });
   };
 
-	render() {
-		return (
-			<div className='login'>
-			  <Form className="login-form" horizontal onSubmit={this.handleSubmit}>
-			    <FormGroup controlId="formHorizontalUsername">
-            <Col sm={10} className='auth-text'>Log In</Col>
-			      <Col sm={10}>
-			        <FormControl 
-                value={this.state.blank} 
-                name="blank"
-                placeholder="blank" 
-                onChange={this.handleChange}
-              />
-			      </Col>
-			    </FormGroup>
+  handleSubmit = (e) => {
+    e.preventDefault();
+    jQuery.ajax({
+      method: "POST",
+      url: '/order',
+      data: this.state,
+      success: (result) => {
+        this.props.approveLogin(result);
+      },
+      error: (err) => {
+        alert(err.responseText);
+      }
+    });
+  };
 
-			    <FormGroup>
-			      <Col sm={10}>
-			        <Button style={{width:"100%"}} bsStyle='primary' type="submit">
-			          Log In
-			        </Button>
-			      </Col>
-			    </FormGroup>
-			  </Form>
-	  	</div>
-  	);
-	}
+  render() {
+    return (
+      <Form horizontal method="post" onSubmit={this.handleSubmit}>
+        <FormGroup
+          controlId="formBasicText"
+          validationState={this.getValidationStateName()}
+        >
+          <Col smOffset={2} sm={10} className='auth-text'>Enter Order</Col>
+          <Col smOffset={2} sm={10}>
+            <FormControl
+              type="text"
+              value={this.state.blank}
+              placeholder="Enter Order"
+              name="blank"
+              onChange={this.handleChange}
+            />
+            <FormControl.Feedback/>
+          </Col>
+        </FormGroup>
+      </Form>
+    );
+  }
 }
 

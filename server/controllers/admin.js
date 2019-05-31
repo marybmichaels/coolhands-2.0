@@ -1,4 +1,3 @@
-//Temporary admin panel to create a survey to database 
 
 const v1 = require('./survey_v1.json');
 var Question = require('../../models/question'),
