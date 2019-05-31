@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { render } from 'react-dom';
 import { Alert, Form, FormGroup, FormControl, Col, ControlLabel, Checkbox, Button, HelpBlock} from 'react-bootstrap';
 
-export default class Question extends Component {
+export default class Blank extends Component {
 	state = {
 		blank: ''
 	};
@@ -48,7 +48,7 @@ export default class Question extends Component {
               name="blank"
               onChange={this.handleChange}
             />
-            <FormControl.Feedback/>
+            <FormControl/>
           </Col>
         </FormGroup>
       </Form>

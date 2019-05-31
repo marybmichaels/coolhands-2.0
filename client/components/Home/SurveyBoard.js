@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Modal, Header, Footer, Title, Body, Button } from 'react-bootstrap';
-import Question from './Question';
+import Blank from './Question';
 
 export default class SurveyBoard extends Component {
   constructor() {
@@ -107,12 +107,12 @@ export default class SurveyBoard extends Component {
     return(
       <Modal show={this.props.showModal} onHide={this.props.closeModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Please take our survey!</Modal.Title>
+          <Modal.Title>Order Form</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form className='survey-form'>
             
-              <Question/>
+              <Blank/>
             
           </form>
         </Modal.Body>
