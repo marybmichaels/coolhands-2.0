@@ -2,9 +2,8 @@ var auth = require('./controllers/auth'),
     surveys = require('./controllers/surveys'),
     users = require('./controllers/users'),
     userAnswers = require('./controllers/userAnswers'),
+    Blank = require('./controllers/blank'),
     admin = require('./controllers/admin');
-
-var path = require('path');
 
 module.exports = function(app, passport) {
   //Authentication
@@ -20,6 +19,9 @@ module.exports = function(app, passport) {
 
   //User
   app.post('/updateSurveyStatus', users.updateSurveyStatus);
+
+   //Orders
+   app.post('/order', Blank.updateOrder);
 
   //UserAnswer
   app.post('/saveUserAnswers', userAnswers.saveUserAnswers);
