@@ -15,6 +15,22 @@ Object.assign(env, {
 });
 
 module.exports = {
+
+  module: {
+    rules: [
+      {
+        test: /\.html$/,
+        use: [ "html-loader" ]
+      }
+    ]
+  },
+
+  htmlLoader: {
+    ignoreCustomFragments: [/\{\{.*?}}/],
+    root: path.resolve(__dirname, 'assets'),
+    attrs: ['img:src', 'link:href']
+  },
+  
   target: 'web',
 
   entry: [
@@ -60,4 +76,5 @@ module.exports = {
 
     noParse: /\.min\.js/
   }
+  
 };

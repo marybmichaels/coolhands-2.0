@@ -3,6 +3,7 @@ var auth = require('./controllers/auth'),
     users = require('./controllers/users'),
     userAnswers = require('./controllers/userAnswers'),
     admin = require('./controllers/admin');
+    // welcome = require('../client/components/Home/Welcome');
 
 module.exports = function(app, passport) {
   //Authentication
@@ -15,6 +16,8 @@ module.exports = function(app, passport) {
 
   //Survey
   app.get('/getSurvey', surveys.getSurvey);
+
+  // app.get('/welcome', welcome.render);
 
   //User
   app.post('/updateSurveyStatus', users.updateSurveyStatus);

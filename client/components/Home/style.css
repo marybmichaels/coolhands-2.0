@@ -1,0 +1,62 @@
+html { 
+    background: url("cityscape.png") no-repeat right -45px bottom fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: auto 645px;
+    /* height: 100% */
+  }  
+
+body {
+    min-height: 100%;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 500!important;
+    background-color: none;
+    background: none;
+}
+
+#bike {
+    width: 30%;
+    margin-bottom: 20px;
+    margin-left: -30px;
+}
+
+#order-btn {
+    font-weight: 700;
+}
+
+h1 {
+    font-family: 'Barlow Condensed', sans-serif!important;
+    font-size: 5em;
+    font-weight: 600;
+}
+
+.btn-success {
+    background-color: #5C1FA9!important;
+    border: none;
+}
+
+#greeting {
+    margin: auto;
+    text-align: center;
+    background: none;
+    background-color: none;
+}
+
+.text-success {
+    color: #5C1FA9!important;
+}
+
+.footer {
+    background-color: #00D51C;
+    height: 20px;
+}
+
+#logo {
+    font-weight: 600;
+}
+
+p {
+    font-size: 1.1em;
+    font-weight: 400
+}
