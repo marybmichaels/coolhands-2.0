@@ -111,15 +111,9 @@ export default class SurveyBoard extends Component {
         </Modal.Header>
         <Modal.Body>
           <form className='survey-form'>
-            {this.state.surveyArray.map((q, i) => (
-              <Question
-                key={i}
-                user_id={this.props.user_id}
-                question={q}
-                picked_answers={this.state.picked_answers}
-                handleAnswer={this.handleAnswer}
-              />
-            ))}
+            
+              <Question/>
+            
           </form>
         </Modal.Body>
         <Modal.Footer>

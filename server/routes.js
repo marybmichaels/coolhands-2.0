@@ -4,6 +4,8 @@ var auth = require('./controllers/auth'),
     userAnswers = require('./controllers/userAnswers'),
     admin = require('./controllers/admin');
 
+var path = require('path');
+
 module.exports = function(app, passport) {
   //Authentication
   app.post('/signup', auth.signup);

@@ -57,10 +57,12 @@ body {
 
 .question {
   font-size: 1.1em;
+  background-color: aqua;
 }
 
 .answer .form-group label {
   display: block;
+  background-color: black;
 }
 
 .answer .form-group label:nth-child(1) {

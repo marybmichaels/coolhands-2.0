@@ -1,42 +1,51 @@
 import React, { Component } from 'react';
-import { Radio, Checkbox, FormGroup, FormControl, Modal, Header, Footer, Title, Body, Button } from 'react-bootstrap';
-import RadioType from '../QuestionType/RadioType';
-import CheckboxType from '../QuestionType/CheckboxType';
+import { Form, FormGroup, FormControl, Col, ControlLabel, Checkbox, Button, Badge} from 'react-bootstrap';
 
-export default class Question extends Component {
-  render() {
-    var QuestionComponent;
-    const { question, picked_answers, handleAnswer } = this.props;
-    //Check if question is already answered
-    var user_ans = picked_answers[question._id] || [];
+export default class Question extends Component{
+	constructor() {
+		super();
+		this.state = {
+			blank: '',
+			error: false,
+		}
+	}
 
-    switch(question.type) {
-      case 'radio':
-        QuestionComponent = FormGroup;
-        break;
+	
 
-      case 'multi':
-        QuestionComponent = CheckboxType;
-        break;
+	
 
-      default:
-        break;
-    }
+  handleSubmit = (e) => {
+    e.preventDefault()
+    const blank = this.state.blank;
+    
+  };
 
-    var questionType = <QuestionComponent
-      question={question} 
-      user_ans= {user_ans}
-      handleAnswer={handleAnswer} 
-      picked_answers={picked_answers}
-    />;
+	render() {
+		return (
+			<div className='login'>
+			  <Form className="login-form" horizontal onSubmit={this.handleSubmit}>
+			    <FormGroup controlId="formHorizontalUsername">
+            <Col sm={10} className='auth-text'>Log In</Col>
+			      <Col sm={10}>
+			        <FormControl 
+                value={this.state.blank} 
+                name="blank"
+                placeholder="blank" 
+                onChange={this.handleChange}
+              />
+			      </Col>
+			    </FormGroup>
 
-    return (
-      <div className='question'>
-        <strong>{question.number}. {question.text}</strong>
-        {questionType && 
-          <div className='answer'>{questionType}</div>
-        }
-      </div>
-    );
-  }
+			    <FormGroup>
+			      <Col sm={10}>
+			        <Button style={{width:"100%"}} bsStyle='primary' type="submit">
+			          Log In
+			        </Button>
+			      </Col>
+			    </FormGroup>
+			  </Form>
+	  	</div>
+  	);
+	}
 }
+
