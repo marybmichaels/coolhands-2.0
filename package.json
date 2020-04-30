@@ -18,7 +18,7 @@
     "express": "4.17.1",
     "express-ejs-layouts": "2.0.0",
     "express-session": "1.16.1",
-    "jquery": "3.4.1",
+    "jquery": "3.5.0",
     "mocha": "3.4.2",
     "mongoose": "4.10.8",
     "passport": "0.3.2",
